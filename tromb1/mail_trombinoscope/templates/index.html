@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div id=""containeur>
+
+
+        <div class="article">
+
+            <!-- affichage de l'image -->
+            <center><img src="{{ url_for('static', filename='images/') }}{{nom_image}}" alt="photo"></center>
+            
+            <div class="nomPrenom"><center><h2>{{prenom}} {{nom}}</h2></center></div>
+            
+            <div id="ligne">
+                
+                <div>
+                    <!-- formulaire pour la photo précédente -->
+                    <form action="/" method="post">
+                        <input type="hidden" name="suivant" value="1">
+                        <button id='submit'>Photo précédente</button>
+                    </form>
+                </div>
+
+                <div>
+                <!-- formulaire pour la photo suivante -->
+                <form action="/" method="post">
+                    <input type="hidden" name="suivant" value="0">
+                    <button id='submit'>Photo suivante</button>
+                </form>
+                </div>
+
+                
+               
+                <div>
+                <!-- formulaire pour l'envoi de mail -->
+                <form action="/" method="post">
+                    <input type="hidden" name="suivant" value="2">
+                    <input type="hidden" name="email" value="{{email}}">
+                    <button id='submit'>Envoyer un email</button>
+                </form>
+                </div>
+
+            </div>
+
+
+                <!-- <p>Nom :  {{ nom }}   </p>
+                <p>Prénom : {{prenom}}</p>
+                <p>Email : {{email }}</p> -->
+        </div>
+        
+        
+
+    </div>
+    
+
+
+</body>
+</html>
